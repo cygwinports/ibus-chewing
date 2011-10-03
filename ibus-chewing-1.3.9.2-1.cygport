@@ -1,0 +1,16 @@
+inherit cmake
+
+DESCRIPTION="IBus Chinese X Input Module component"
+HOMEPAGE="http://code.google.com/p/ibus/"
+SRC_URI="http://ibus.googlecode.com/files/${P}-Source.tar.gz"
+SRC_DIR="${P}-Source"
+
+PATCH_URI="1.3.9.2-vpath.patch"
+
+DIFF_EXCLUDES="RELEASE-NOTES.txt* po *.c *.h"
+
+CYGCMAKE_ARGS="
+    -DGCONF_SCHEMAS_INSTALLED_DIR=/etc/gconf/schemas
+    -DLIBEXEC_DIR=/usr/lib/ibus
+    -DPRJ_DOC_DIR=/usr/share/doc/${PN}
+"
