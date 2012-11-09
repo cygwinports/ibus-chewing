@@ -1,11 +1,18 @@
 inherit cmake
 
-DESCRIPTION="IBus Chinese X Input Module component"
+NAME="ibus-chewing"
+VERSION=1.4.2
+RELEASE=1
+CATEGORY="X11"
+SUMMARY="IBus Chinese X Input Module engine"
+DESCRIPTION="IBus is an Intelligent Input Bus. It is a new input framework
+for X11 systems. It provides full featured and user friendly input method
+user interface. It also may help developers to develop input method easily."
+REQUIRES="ibus"
 HOMEPAGE="http://code.google.com/p/ibus/"
 SRC_URI="http://ibus.googlecode.com/files/${P}-Source.tar.gz"
 SRC_DIR="${P}-Source"
-
-PATCH_URI="1.3.10-vpath.patch"
+PATCH_URI="1.4.2-vpath.patch"
 
 DEPEND="cmake-fedora
 	pkgconfig(chewing)

@@ -1,0 +1,20 @@
+--- origsrc/ibus-chewing-1.4.2-Source/Modules/ManageTranslation.cmake	2012-08-23 09:49:12.000000000 -0500
++++ src/ibus-chewing-1.4.2-Source/Modules/ManageTranslation.cmake	2012-11-09 00:46:43.213395700 -0600
+@@ -151,7 +151,7 @@ IF(NOT DEFINED _MANAGE_TRANSLATION_CMAKE
+ 	    ENDIF(_potFile STREQUAL "")
+ 
+ 	    IF(NOT _localeList)
+-		FILE(GLOB _poFiles "*.po")
++		FILE(GLOB _poFiles "${CMAKE_CURRENT_SOURCE_DIR}/*.po")
+ 		FOREACH(_poFile ${_poFiles})
+ 		    GET_FILENAME_COMPONENT(_locale "${_poFile}" NAME_WE)
+ 		    LIST(APPEND _localeList "${_locale}")
+@@ -180,7 +180,7 @@ IF(NOT DEFINED _MANAGE_TRANSLATION_CMAKE
+ 	    GET_FILENAME_COMPONENT(_absPotDir ${_absPotFile} PATH)
+ 	    FOREACH(_locale ${_localeList})
+ 		SET(_absGmoFile ${_absPotDir}/${_locale}.gmo)
+-		SET(_absPoFile ${_absPotDir}/${_locale}.po)
++		SET(_absPoFile ${CMAKE_CURRENT_SOURCE_DIR}/${_locale}.po)
+ 
+ 		ADD_CUSTOM_COMMAND(OUTPUT ${_absPoFile}
+ 		    COMMAND ${GETTEXT_MSGMERGE_CMD}
