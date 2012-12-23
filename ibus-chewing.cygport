@@ -2,7 +2,7 @@ inherit cmake
 
 NAME="ibus-chewing"
 VERSION=1.4.2
-RELEASE=1
+RELEASE=2
 CATEGORY="X11"
 SUMMARY="IBus Chinese X Input Module engine"
 DESCRIPTION="IBus is an Intelligent Input Bus. It is a new input framework
