@@ -1,8 +1,8 @@
 inherit cmake
 
 NAME="ibus-chewing"
-VERSION=1.4.2
-RELEASE=2
+VERSION=1.4.3
+RELEASE=1
 CATEGORY="X11"
 SUMMARY="IBus Chinese X Input Module engine"
 DESCRIPTION="IBus is an Intelligent Input Bus. It is a new input framework
@@ -10,8 +10,8 @@ for X11 systems. It provides full featured and user friendly input method
 user interface. It also may help developers to develop input method easily."
 REQUIRES="ibus"
 HOMEPAGE="http://code.google.com/p/ibus/"
-SRC_URI="http://ibus.googlecode.com/files/${P}-Source.tar.gz"
-SRC_DIR="${P}-Source"
+SRC_URI="http://ibus.googlecode.com/files/${NAME}-${VERSION}-Source.tar.gz"
+SRC_DIR="${NAME}-${VERSION}-Source"
 PATCH_URI="1.4.2-vpath.patch"
 
 DEPEND="cmake-fedora
@@ -25,5 +25,5 @@ DIFF_EXCLUDES="RELEASE-NOTES.txt* po *.c *.h"
 
 CYGCMAKE_ARGS="
     -DGCONF_SCHEMAS_INSTALLED_DIR=/etc/gconf/schemas
-    -DLIBEXEC_DIR=/usr/lib/ibus
+    -DLIBEXEC_DIR=/usr/libexec
 "
